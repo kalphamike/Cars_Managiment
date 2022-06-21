@@ -20,8 +20,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "AddOwner")
 @SessionScoped
 public class ownerView {
-    GeneralDao<Owner> dao = new GeneralDao<Owner>(Owner.class);
     private Owner owner = new Owner();
+    GeneralDao<Owner> dao = new GeneralDao<Owner>(Owner.class);
+    
     private List<Owner> owners;
     private List<Owner> ownerslist = new ArrayList<>();
     
