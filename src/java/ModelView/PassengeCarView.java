@@ -18,9 +18,9 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "AddPassengerCars")
 @SessionScoped
 public class PassengeCarView {
-
+private PassengeCar car = new PassengeCar();
     GeneralDao<PassengeCar> daop = new GeneralDao<PassengeCar>(PassengeCar.class);
-    private PassengeCar car = new PassengeCar();
+    
     private List<PassengeCar> passengeCars;
 
     public String gotoPassengerCar() {

@@ -26,6 +26,7 @@ public class UserAccountView {
     GeneralDao<Employee> daoe = new GeneralDao<Employee>(Employee.class);
     private Employee employee = new Employee();
     
+    
     private UserAccount account = new UserAccount();
     private String username ;
     private String password;

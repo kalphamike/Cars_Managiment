@@ -27,7 +27,7 @@
                         </p:selectOneRadio>
                         <p:outputLabel value=" JoiningDate:"/>
                         <p:datePicker id="date" value="#{AdminCreate.emp.date}" title="Date"/>
-                        <p:commandButton id="btn" onclick="Save" value="Save" action="#{AdminCreate.saveEmp()}" />
+                        <p:commandButton id="btn" onclick="Save" value="Save" action="#{AdminCreate.saveEmp}" />
                         <p:linkButton outcome="HomePage" value="Back" style="margin-right:20px;">
                         <f:param name="home" value="10"/>
                     </p:linkButton>
