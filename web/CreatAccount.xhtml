@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 80%">
+        <center>
+            <h:form style="border: 3px solid black;width: 500px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9">
+                
+                <p:panel header="Employee SignUp">
+                    <h:panelGrid columns="2">
+                    <p:outputLabel value="EmployeeId:"/>
+                    <p:inputText id="employeeId"  title="employeeId"/>
+                    <p:outputLabel value="UserName:"/>
+                    <p:inputText id="userName" value="#{userlog.account.userName}" title="UserName"/>
+                    <p:outputLabel value="Password:"/>
+                    <p:inputText id="password" value="#{userlog.account.password}" title="password"/>
+                    <p:outputLabel value="Email:"/>
+                    <p:inputText id="email" value="#{userlog.account.email}" title="Email"/>
+                    <p:commandButton id="savabtn" onclick="SAVE"  value="SAVE" action="#{userlog.saveAcc()}"/>
+                    <p:linkButton outcome="LoginPage" value="Back" style="margin-right:20px;">
+                        <f:param name="productId" value="10"/>
+                    </p:linkButton>
+                </h:panelGrid>
+                </p:panel>
+                
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

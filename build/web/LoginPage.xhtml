@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <style>
+        footer{
+            padding: 2px;
+            background-color: #cbe6f5; 
+            opacity: 0.5;
+            margin: 0;
+        }
+    </style>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 80%">
+        <div style="background-color: #334f52; opacity: 0.7; color: white">
+            <center>
+                <h1>Car census</h1>
+                <h5>What We Do For One We Do For All</h5>
+            </center>
+        </div>
+        <div class="home">
+            <h:form style="opacity: 0.8">
+                <p:tabMenu >
+                    <p:menuitem value="Home"  icon="pi pi-fw pi-home">
+                        <f:param name="i" value="0"/>
+                    </p:menuitem>
+                    <p:menuitem value="Calendar"  icon="pi pi-fw pi-calendar">
+                        
+                        <f:param name="i" value="1"/>
+                        
+                    </p:menuitem>
+                    <p:menuitem value="Edit"  icon="pi pi-fw pi-pencil">
+                        <f:param name="i" value="2"/>
+                    </p:menuitem>
+                    <p:menuitem value="Documentation"  icon="pi pi-fw pi-file">
+                        <f:param name="i" value="3"/>
+                    </p:menuitem>
+                    <p:menuitem value="Settings"  icon="pi pi-fw pi-cog">
+                        <f:param name="i" value="4"/>
+                    </p:menuitem>
+                </p:tabMenu>
+            </h:form>
+
+        </div>
+        <div style="display: grid;grid-template-columns:auto auto;width: 1000px;padding: 10px;">
+            <div style="width: 300px; background-color: #b7ebd4; opacity: 0.8">
+                <div>
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+                        <h5 class="p-mt-0"></h5>
+                        <p:fieldset legend="Vehicles Available">
+                            <p class="p-m-0">
+                                We ask a question about the vehicles 
+                                available to each household to create 
+                                statistics about vehicle access. 
+                                Vehicle data help:<br/>
+
+                                * Plan and fund improvements to road and highway infrastructure.<br/>
+                                * Develop transportation plans and services.<br/>
+                                * Understand how people are traveling in the course of a normal day.<br/>
+                                * Evaluate pollution and access to transportation in emergencies.<br/>
+                            </p>
+                        </p:fieldset>
+                    </h:form>
+                </div>
+                <div>
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+                        <h5 class="p-mt-0"></h5>
+                        <p:fieldset legend="Vehicles Register">
+                            <p class="p-m-0">
+                                Car registration is a legal necessity that 
+                                not only applies to United States citizens 
+                                but to citizens of most countries. A vehicle 
+                                registration plate is the plate (usually referred to as the license plate) 
+                                that is attached to motor vehicles or trailers 
+                                for I.D purposes. Depending on what country 
+                                the car is registered in, the car will have a certain 
+                                amount of numeric characters. In the United States it is a 
+                                federal law that all cars be registered once per year. 
+                                If the car is not registered then there is the 
+                                possibility of receiving a large fine and/ or jail 
+                                time depending on the circumstances.
+                            </p>
+                        </p:fieldset>
+                    </h:form>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <f:view>
+                        <center>
+                            <h:form style="padding: 10px; width: 400px; opacity: 0.9; background-color: #cfccf0">
+                                <h5 class="p-mt-0"></h5>
+
+                                <p:panel header="Login Page" footer="Make your choice">
+                                    <p class="p-m-0">
+                                        <h1><h:outputText value="Login as Admin or Employee"/></h1>
+
+                                        <h:panelGrid columns="2">
+
+                                            <p:outputLabel value="UserName:" for="userName" />
+                                            <p:inputText id="userName" value="#{userlog.account.userName}" title="UserName"  />
+                                            <p:outputLabel value="Password:" for="password" />
+                                            <p:password id="password" value="#{userlog.account.password}" title="Password" />
+                                            <p:commandButton onclick="Login" action="#{userlog.login()}" value="Login"/>  
+
+                                            <p:commandLink value="Sign Up For new Account" action="CreatAccount"/>
+                                        </h:panelGrid>  
+                                    </p>
+                                </p:panel>
+                            </h:form>
+                        </center>
+                    </f:view>
+                </div>
+                <div>
+                    <h:form>
+                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+                        <h5 class="p-mt-0"></h5>
+                        <p:fieldset legend="Cars Picture" style="opacity: 0.8">
+                            <div class="card">
+                                <h5>MP4</h5>
+                                <p:video value="https://www.youtube.com/watch?v=YAWt-gktZqM"
+                                         player="mp4"
+                                         controls="true"
+                                         width="420"
+                                         height="250"
+                                         >
+                                    Your browser does not support the video element.
+                                    See: <h:outputLink value="https://www.youtube.com/watch?v=YAWt-gktZqM">HTML5 Video</h:outputLink>
+                                </p:video>
+                            </div>
+                        </p:fieldset>
+                    </h:form>
+                </div>
+            </div>
+
+
+        </div>
+        <footer>
+            <div>
+                <center>
+                    <p>Author: Eng. Mugara Steven
+                        <a href="stevenmugara1998@gmail.com">steven.mugara@auca.ac.rw</a></p>
+                </center>
+
+            </div>
+
+        </footer>
+
+    </h:body>
+
+</html>
+

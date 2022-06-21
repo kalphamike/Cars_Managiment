@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: whitesmoke; background-size: 100%">
+        <f:view>
+            <center>
+                <h:form style="border: 3px solid black;width: 1000px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9">
+                    <h1><h:outputText value="List of all Driver"/></h1>
+                    <h:dataTable border="1" value="#{AdminCreate.allEmployee}" var="item">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Employee_Id"/>
+                            </f:facet>
+                            <h:outputText value="#{item.empId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="EmployeeName"/>
+                            </f:facet>
+                            <h:outputText value="#{item.empName}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Email"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Gender"/>
+                            </f:facet>
+                            <h:outputText value="#{item.gender}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Date"/>
+                            </f:facet>
+                            <h:outputText value="#{item.date}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Action"/>
+                            </f:facet>
+                            <h:commandButton value="Delete" action="#{AdminCreate.deleteEmployee()}"/>
+                            <h:commandButton value="UpDate" action="#{AdminCreate.gotoUpdateEmployee()}"/>
+                        </h:column>
+                        
+                    </h:dataTable>
+                </h:form>
+            </center>
+        </f:view>
+    </h:body>
+</html>
+

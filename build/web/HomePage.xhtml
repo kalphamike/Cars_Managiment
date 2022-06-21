@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: whitesmoke; background-size: 100%">
+
+        <h:form>
+            <div class="card">
+                <h:form>
+                    <p:growl id="messages"/>
+
+                    <p:menubar>
+                   
+
+                        <p:submenu label="Users" icon="pi pi-fw pi-user">
+                            <p:menuitem value="New" outcome="Employee" icon="pi pi-fw pi-user-plus"/>
+                            <p:menuitem value="Delete" outcome="AdminDisplayAllEmployee" icon="pi pi-fw pi-user-minus"/>
+                           
+                        </p:submenu>
+                        
+                        
+                        <p:submenu label="Cars" icon="pi pi-fw pi-cars">
+                            <p:menuitem value="New Truck Cars" outcome="AddTruckCar" icon="pi pi-fw pi-user-cars"/>
+                            <p:menuitem value="New PessengerCars" outcome="AdminDisplayAllEmployee" icon="pi pi-fw pi-user-cars"/>
+                            
+                        </p:submenu>
+                        
+                        
+                        <p:submenu label="Drivers" icon="pi pi-fw pi-cars">
+                            <p:menuitem value="New Driver" outcome="Employee" icon="pi pi-fw pi-user-cars"/>
+                            <p:menuitem value="List Driver" outcome="DisplayAllEmployee" icon="pi pi-fw pi-user-cars"/>
+                            
+                        </p:submenu>
+                       
+                        
+
+                       
+
+                        <p:divider layout="vertical"/>
+
+                        <p:menuitem outcome="LoginPage" value="Quit" icon="pi pi-fw pi-power-off" action="#{AddOwner.gotoLogin()}"/>
+
+                        <f:facet name="options">
+                            <div class="ui-input-icon-left p-mr-2">
+                                <i class="pi pi-fw pi-search" />
+                                <p:inputText value="#{AddOwner.getownerCar(id)}" placeholder="Search"/>
+                            </div>
+                            <p:button outcome="LoginPage" value="Logout" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                        </f:facet>
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div style="display: grid;grid-template-columns:auto auto;width: 500px;padding: 10px">
+
+                <p:menu style="background-color: #ebf0eb; width: 1050px; opacity: 0.9">
+                    <p:submenu label="Admin Control">
+                        <p:menuitem style="font-size: 20px" value="List of Driver " action="#{AdminCreate.gotoAdminDispEmp()}"></p:menuitem>
+                        <p:menuitem style="font-size: 20px" value="List Of Truck Cars" action="#{AddTruck.gotoAdminDisplayTruck()}" ></p:menuitem>
+                        <p:menuitem style="font-size: 20px" value="List Of Passenger Cars" action="#{AddPassengerCars.gotoAdminDisplayAllPassengerCar()}"></p:menuitem>
+                        <p:menuitem style="font-size: 20px" value="List Of Cars" action="#{AddTruck.gotoCars()}"></p:menuitem>
+
+                    </p:submenu>
+                    
+                    <p:separator/>
+                </p:menu>
+
+            </div>
+
+        </h:form>
+
+
+
+    </h:body>
+</html>
+

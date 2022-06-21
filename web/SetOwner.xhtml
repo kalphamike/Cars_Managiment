@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 100%">
+        <center>
+            <h:form style="border: 3px solid black;width: 500px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9" >
+                <h1>Set The Car's Owner</h1><br/><br/>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="OwnerId:" />
+                    <p:inputText id="ownerId" value="#{AddOwner.owner.ownerId}" title="OwnerdId"/>
+                    <p:outputLabel value="OwnerName:"/>
+                    <p:inputText id="ownerName" value="#{AddOwner.owner.ownerName}" title="OwnerName"/>
+                    <p:commandButton id="button" onclick="Save" value="Save" action="#{AddOwner.saveOwn()}" />
+                    <p:linkButton outcome="TruckOrPassengerCar" value="Back" style="margin-right:20px;">
+                        <f:param name="productId" value="10"/>
+                    </p:linkButton>
+                    <p:commandLink id="skype" value="Skyp for existing Owner" action="#{AddTruck.gotoTruckOrPass()}"/>
+                </h:panelGrid>
+            </h:form>
+        </center>
+
+    </h:body>
+</html>
+

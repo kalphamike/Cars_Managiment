@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TruckForm</title>
+
+    </h:head>
+    <h:body style="background-color: whitesmoke; background-size: 100%">
+        <center>
+            <h:form style="border: 3px solid black;width: 500px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9">
+                <div style=" padding-top: 20px; background-size: 96%; font-size: 23px; font-style: inherit ">
+                    <h1 style="padding-bottom: 20px; color: #f5ac25">Record Truck</h1>
+                </div>
+
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="PlateNo:"/>
+                    <p:inputText id="plateNo" value="#{AddTruck.car.plateNo}" title="plateNo"/>
+                    <p:outputLabel value="CarModel"/>
+                    <p:inputText id="carModel" value="#{AddTruck.car.model}" title="CarModel"/>
+                    <p:outputLabel value="ManufureYear"/>
+                    <p:inputText id="manufureYear" value="#{AddTruck.car.manufureYear}" title="ManufureYear"/>
+                    <p:outputLabel value="Load Capacity"/>
+                    <p:inputText id="loadcapacity" value="#{AddTruck.car.loadCapacity}" title="LoadCapacity"/>
+                    <p:outputLabel value="Location"/>
+
+                    <p:selectOneMenu id="option" value="#{AddTruck.car.locid}">
+                        <f:selectItem itemLabel="Select Province" itemValue=""/>
+                        <f:selectItem itemLabel="NORTHERN" itemValue="NORTHERN"/>
+                        <f:selectItem itemLabel="SOUTHERN" itemValue="SOUTHERN"/>
+                        <f:selectItem itemLabel="EASTERN" itemValue="EASTERN"/>
+                        <f:selectItem itemLabel="WESTERN" itemValue="WESTERNt"/>
+                        <f:selectItem itemLabel="KIGALI" itemValue="KIGALI"/>
+                        <f:facet name="footer">
+                            <p:divider styleClass="p-mt-0" />
+                            <h:outputText value="5 options" style="font-weight:bold;"/>
+                        </f:facet>
+                    </p:selectOneMenu>
+                    
+                    
+
+                    <p:outputLabel value="Registration Date"/>
+                    <p:datePicker id="dates" value="#{AddTruck.car.regDate}" title="Date"/>
+
+                    <p:outputLabel value="Done By:"/>
+                    <p:inputText id="employee" value="#{AddTruck.car.employeeId}" title="Employee_Id"/>
+                    <p:commandButton id="savabtn" onclick="SAVE" value="SAVE" action="#{AddTruck.saveTruck()}"/>
+                    <p:linkButton outcome="TruckOrPassengerCar" value="Back" style="margin-right:20px;">
+                        <f:param name="productId" value="10"/>
+                    </p:linkButton>
+                </h:panelGrid>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+

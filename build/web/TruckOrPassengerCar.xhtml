@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <style>
+        
+    </style>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 100%">
+
+        <h:form>
+            <div class="card">
+                <h:form>
+                    <p:growl id="messages"/>
+
+                    <p:menubar>
+                        <p:submenu label="File" icon="pi pi-fw pi-file">
+                            <p:submenu label="New" icon="pi pi-fw pi-plus">
+                                <p:menuitem value="Bookmark" icon="pi pi-fw pi-bookmark"/>
+                                <p:menuitem value="Video" icon="pi pi-fw pi-video"/>
+                            </p:submenu>
+                            <p:menuitem value="Delete" icon="pi pi-fw pi-trash"/>
+                            <p:divider />
+                            <p:menuitem value="Export" icon="pi pi-fw pi-external-link"/>
+                        </p:submenu>
+
+                        <p:submenu label="Edit" icon="pi pi-fw pi-pencil">
+                            <p:menuitem value="Left" icon="pi pi-fw pi-align-left"/>
+                            <p:menuitem value="Right" icon="pi pi-fw pi-align-right"/>
+                            <p:menuitem value="Center" icon="pi pi-fw pi-align-center"/>
+                            <p:menuitem value="Justify" icon="pi pi-fw pi-align-justify"/>
+                        </p:submenu>
+
+                        <p:submenu label="Users" icon="pi pi-fw pi-user">
+                            <p:menuitem value="New" outcome="SetOwner" icon="pi pi-fw pi-user-plus"/>
+                            <p:menuitem value="Delete"  icon="pi pi-fw pi-user-minus"/>
+                            <p:submenu label="Search" icon="pi pi-fw pi-users">
+                                <p:submenu label="Filter" icon="pi pi-fw pi-filter">
+                                    <p:menuitem value="Print" icon="pi pi-fw pi-print"/>
+                                </p:submenu>
+                                <p:menuitem value="List" icon="pi pi-fw pi-bars"/>
+                            </p:submenu>
+                        </p:submenu>
+
+                        <p:submenu label="Events" icon="pi pi-fw pi-calendar">
+                            <p:submenu label="Edit" icon="pi pi-fw pi-pencil">
+                                <p:menuitem value="Save" outcome="DisplayAllTrucks"  icon="pi pi-fw pi-calendar-plus"/>
+                                <p:menuitem value="Delete" outcome="DisplayAllTrucks" icon="pi pi-fw pi-calendar-minus"/>
+                            </p:submenu>
+                            <p:submenu label="Archieve" icon="pi pi-fw pi-calendar-times">
+                                <p:menuitem value="Remove" icon="pi pi-fw pi-calendar-minus"/>
+                            </p:submenu>
+                        </p:submenu>
+
+                        <p:divider layout="vertical"/>
+
+                        <p:menuitem outcome="LoginPage" value="Quit" icon="pi pi-fw pi-power-off" action="#{AddOwner.gotoLogin()}"/>
+
+                        <f:facet name="options">
+                            <div class="ui-input-icon-left p-mr-2">
+                                <i class="pi pi-fw pi-search" />
+                                <p:inputText value="#{AddOwner.getownerCar(id)}" placeholder="Search"/>
+                            </div>
+                            <p:button outcome="LoginPage" value="Logout" icon="pi pi-fw pi-sign-out" styleClass="ui-button-info"/>
+                        </f:facet>
+                    </p:menubar>
+                </h:form>
+            </div>
+            <div style="display: grid;grid-template-columns:auto auto;width: 500px;padding: 10px">
+
+                <p:menu style="background-color: #ebf0eb; width: 1050px; opacity: 0.9 ">
+                    <p:submenu label="CHOOSE TYPE OF CAR">
+                        <p:menuitem style="font-size: 20px"  outcome="AddTruckCar" value="Record Truck_Car" action="#{AddOwner.gotoTruck()}" ></p:menuitem>
+                        <p:menuitem style="font-size: 20px" outcome="AddPassengerCar" value="Record Passenger_Car" action="#{AddPassengerCars.gotoPassengerCar()}"></p:menuitem>
+                        <p:menuitem value=""></p:menuitem>
+
+                    </p:submenu>
+                    <p:submenu label="Control">
+                        <p:menuitem style="font-size: 20px" outcome="DisplayAllTrucks" value="List Of All Truck_Car" action="#{AddTruck.gotoDisplayAllTrucks()}" ></p:menuitem>
+                        <p:menuitem style="font-size: 20px" outcome="DisplayAllPassengerCar" value="List Of All Passenger" action="#{AddPassengerCars.gotoDisplayAllPassengerCar()}"></p:menuitem>
+                        <p:separator/>
+                        <p:menuitem style="font-size: 20px" value="List of All Cars"></p:menuitem>
+
+                    </p:submenu>
+                    <p:submenu label="About Us">
+                        <p:menuitem value="About Us"></p:menuitem>
+                        <p:menuitem value="Help"></p:menuitem>
+                    </p:submenu>
+                    <p:separator/>
+                    <p:menuitem value="Logout" action="#{userlog.gotoLogin()}"></p:menuitem>
+                </p:menu>
+
+            </div>
+
+        </h:form>
+
+
+
+    </h:body>
+</html>
+

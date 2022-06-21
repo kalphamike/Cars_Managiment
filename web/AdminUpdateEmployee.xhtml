@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 80%">
+
+        <center>
+            <div style="display: grid; grid-templete-columns:auto auto;width: 600px;padding: 50px;">
+                <h:form>
+                    <p:panel header="Update Employee" style="opacity: 0.9">
+                        <h:panelGrid columns="2">
+                        <p:outputLabel value="EmployeeId:"/>
+                        <p:inputText id="employeeId" value="#{AdminCreate.emp.empId}" title="EmployeeId"/>
+                        <p:outputLabel value="EmployeeName:"/>
+                        <p:inputText id="employeeName" value="#{AdminCreate.emp.empName}" title="EmployeeName"/>
+                        <p:outputLabel value="Email:"/>
+                        <p:inputText id="Email" value="#{AdminCreate.emp.email}" title="Email"/>
+                        <p:outputLabel value="Gender"/>
+                        <p:selectOneRadio id="gender" value="#{AdminCreate.emp.gender}" >
+                            <f:selectItem itemLabel="Male" itemValue="MALE"/>
+                            <f:selectItem itemLabel="Female" itemValue="FEMALE"/>
+                        </p:selectOneRadio>
+                        <p:outputLabel value="Date:"/>
+                        <p:datePicker id="date" value="#{AdminCreate.emp.date}" title="Date"/>
+                        <p:commandButton id="btn" onclick="Update" value="Update" action="#{AdminCreate.updateEmployee()}" />
+                        <f:param name="home" value="10"/>
+                    
+
+                    </h:panelGrid>
+                    </p:panel>
+                    
+                    
+
+                </h:form>
+            </div>
+
+        </center>
+
+    </h:body>
+</html>
+

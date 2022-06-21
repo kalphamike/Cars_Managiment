@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-image: url(../Images/truck4.jpg); background-size: 100%">
+        <f:view>
+            <center>
+                <h:form style="border: 3px solid black;width: 1500px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9">
+                    <h1><h:outputText value="List of all Passenger_Car"/></h1>
+                    <h:dataTable border="1" value="#{AddPassengerCars.allPassengerCar}" var="item" >
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="PlateNo:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.plateNo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="CarModel:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.model}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="ManufactureYear:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.manufureYear}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Number_Of_Passenger:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.numberOfPassanger}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Location:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.locid}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Registration_Date:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.regDate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="CarType"/>
+                            </f:facet>
+                            <h:outputText value="Passenger_Car"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Owner_Id"/>
+                            </f:facet>
+                            <h:outputText value="#{item.owner}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Owner_Name"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ownername}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Done_By:"/>
+                            </f:facet>
+                            <h:outputText value="#{item.employeeId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Action"/>
+                            </f:facet>
+                            <h:commandButton value="Delete" action="#{AddPassengerCars.deletePcar()}" />
+                            <h:commandButton value="UpDate" action="#{AddPassengerCars.gotoAdminUpdatePassengerCar()}"/>
+                        </h:column>
+                        
+                    </h:dataTable>
+                    <p:linkButton outcome="HomePage" value="Back" style="margin-right:20px;">
+                        <f:param name="productId" value="10"/>
+                    </p:linkButton>
+                </h:form>
+            </center>
+        </f:view>
+    </h:body>
+</html>
+

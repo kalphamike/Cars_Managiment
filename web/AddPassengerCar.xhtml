@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>PassengerCarForm</title>
+    </h:head>
+    <h:body style="background-image: url(../Images/images2.jpg); background-size: 95%">
+        <center>
+            <h:form style="border: 3px solid black;width: 500px;margin: auto; padding: 50px; background-color: #ebeced; opacity: 0.9">
+                <div style="background-image: url(../Images/images1.jpg); padding-top: 20px; background-size: 100%; font-size: 20px; font-style: inherit ">
+                    <h1 style="padding-bottom: 20px; color: black; background-color: #c0c4bc; opacity: 0.9">Record Passenger_Car</h1>
+                </div>
+                <h:panelGrid columns="2">
+                    <p:outputLabel value="PlateNo:"/>
+                    <p:inputText id="plateNo" value="#{AddPassengerCars.car.plateNo}" title="plateNo"/>
+                    <p:outputLabel value="CarModel"/>
+                    <p:inputText id="carModel" value="#{AddPassengerCars.car.model}" title="CarModel"/>
+                    <p:outputLabel value="ManufureYear"/>
+                    <p:inputText id="manufureYear" value="#{AddPassengerCars.car.manufureYear}" title="ManufureYear"/>
+                    <p:outputLabel value="NumberOfPassengers"/>
+                    <p:inputText id="noOfpassenger" value="#{AddPassengerCars.car.numberOfPassanger}" title="numberOfPassengers"/>
+                    <p:outputLabel value="Registration Date"/>
+                    <p:datePicker id="dates" value="#{AddPassengerCars.car.regDate}" title="Date"/>
+                    
+                    <p:commandButton id="savabtn" onclick="SAVE"  value="SAVE" action="#{AddPassengerCars.savePcar()}"/>
+                    <p:linkButton outcome="TruckOrPassengerCar" value="Back" style="margin-right:20px;">
+                        <f:param name="productId" value="10"/>
+                    </p:linkButton>
+                </h:panelGrid>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+
