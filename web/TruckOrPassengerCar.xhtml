@@ -21,8 +21,8 @@
                         
                         
                         
-                        <p:submenu label="Cars" icon="">
-                            <p:menuitem value="New Passenger Car" outcome="Employee" icon=""/>
+                        <p:submenu label="Add Cars" icon="">
+                            <p:menuitem value="New Passenger Car" outcome="AddPassengerCar" icon=""/>
                             <p:menuitem value="New Truck Car" outcome="AddTruckCar" icon=""/>
                         </p:submenu>
                         
@@ -46,7 +46,7 @@
             <div style="display: grid;grid-template-columns:auto auto;width: 500px;padding: 10px">
 
                 <p:menu style="background-color: #ebf0eb; width: 1050px; opacity: 0.9 ">
-                    
+                   
                     <p:submenu label="Control">
                         <p:menuitem style="font-size: 20px" outcome="DisplayAllTrucks" value="List Of All Truck_Car" action="#{AddTruck.gotoDisplayAllTrucks()}" ></p:menuitem>
                         <p:menuitem style="font-size: 20px" outcome="DisplayAllPassengerCar" value="List Of All Passenger" action="#{AddPassengerCars.gotoDisplayAllPassengerCar()}"></p:menuitem>
@@ -54,10 +54,7 @@
                         <p:menuitem style="font-size: 20px" value="List of All Cars"></p:menuitem>
 
                     </p:submenu>
-                    <p:submenu label="About Us">
-                        <p:menuitem value="About Us"></p:menuitem>
-                        <p:menuitem value="Help"></p:menuitem>
-                    </p:submenu>
+                   
                     <p:separator/>
                     <p:menuitem value="Logout" action="#{userlog.gotoLogin()}"></p:menuitem>
                 </p:menu>

@@ -27,9 +27,15 @@ public class ownerView {
     private List<Owner> ownerslist = new ArrayList<>();
     
     public String saveOwn(){
-      dao.insert(owner);
-      clearAfterSave();
-      return "TruckOrPassengerCar";
+        try {
+            
+            dao.insert(owner);
+         clearAfterSave();
+          return "HomePage";
+          
+        } catch (Exception e) {
+        }
+      return "SetOwner";
     }
     public String gotosetowener(){
         return"SetOwner";
@@ -71,7 +77,7 @@ public class ownerView {
     
     
     public void clearAfterSave(){
-    owner.setOwnerId("");
-    owner.setOwnerName("");
+   // owner.setOwnerId("");
+    //owner.setOwnerName("");
     }
 }

@@ -37,7 +37,7 @@ public class MyTesting {
         TruckCar tcar = new TruckCar();
         PassengeCar passengeCar = new PassengeCar();
         Owner o= new Owner();
-        o.setOwnerId("9034");
+        o.setOwnerId(0);
         o.setOwnerName("zezera");
         Employee e= new Employee("09876", "kali"," kali@gmail", Gender.MALE,new Date("11/02/2021"));
         UserAccount account = new UserAccount();

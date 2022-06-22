@@ -25,7 +25,7 @@
                         
                         
                         <p:submenu label="Cars" icon="">
-                            <p:menuitem value="New Passenger Car" outcome="Employee" icon=""/>
+                            <p:menuitem value="New Passenger Car" outcome="AddPassengerCar" icon=""/>
                             <p:menuitem value="New Truck Car" outcome="AddTruckCar" icon=""/>
                         </p:submenu>
                         
@@ -33,6 +33,12 @@
                         <p:submenu label="Add Drivers" icon="">
                             <p:menuitem value="New Passenger Car" outcome="Employee" icon=""/>
                             <p:menuitem value="New Truck Car" outcome="AddTruckCar" icon=""/>
+                        </p:submenu>
+                        
+                        
+                       <p:submenu label="Add Car Owner" icon="">
+                            <p:menuitem value="Add Onwer" outcome="SetOwner" icon=""/>
+                            <p:menuitem value="List all Cars" outcome="DisplayAllCar" icon=""/>
                         </p:submenu>
                         
                         
@@ -60,10 +66,13 @@
 
                 <p:menu style="background-color: #ebf0eb; width: 1050px; opacity: 0.9">
                     <p:submenu label="Admin Control">
-                        <p:menuitem style="font-size: 20px" value="List of Driver " action="#{AdminCreate.gotoAdminDispEmp()}"></p:menuitem>
-                        <p:menuitem style="font-size: 20px" value="List Of Truck Cars" action="#{AddTruck.gotoAdminDisplayTruck()}" ></p:menuitem>
-                        <p:menuitem style="font-size: 20px" value="List Of Passenger Cars" action="#{AddPassengerCars.gotoAdminDisplayAllPassengerCar()}"></p:menuitem>
-                        <p:menuitem style="font-size: 20px" value="List Of Cars" action="#{AddTruck.gotoCars()}"></p:menuitem>
+                        <p:menuitem style="font-size: 20px" outcome="AdminDisplayAllEmployee" value="List of Driver " action="#{AdminCreate.gotoAdminDispEmp()}"/>
+                        <p:menuitem style="font-size: 20px"  outcome="AdminDisplayAllTruckCars" value="List Of Truck Cars" action="#{AddTruck.gotoAdminDisplayTruck()}"/>
+                        <p:menuitem style="font-size: 20px" outcome="AdminDisplayAllPassengerCar" value="List Of Passenger Cars" action="#{AddPassengerCars.gotoAdminDisplayAllPassengerCar()}"/>
+                        <p:menuitem style="font-size: 20px" outcome="DisplayAllCar" value="List Of Cars" action="#{AddTruck.gotoCars()}"/>
+                        
+                        
+                       
 
                     </p:submenu>
                     
